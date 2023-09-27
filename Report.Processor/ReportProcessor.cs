@@ -23,7 +23,7 @@ namespace Report.Processor
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
 
-            var timer = new PeriodicTimer(TimeSpan.FromMinutes(1));
+            var timer = new PeriodicTimer(TimeSpan.FromMinutes(5));
             while (await timer.WaitForNextTickAsync(stoppingToken))
             {
                 string path = string.Format(Directory.GetCurrentDirectory() + "\\{0}", "Reports");
